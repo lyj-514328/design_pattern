@@ -57,9 +57,7 @@ template<class T1>
 class Output: public output_item<T1> {
 public:
 	template<typename M>
-	Output(M&& obj): output_item<T1>::output_item(std::forward<M>(obj)) {
-		auto&& it = this->item;
-	}
+	Output(M&& obj): output_item<T1>::output_item(std::forward<M>(obj)) {}
 	void output(const typename T1::value_type& it) {
 		cout << it << endl;
 	}
